@@ -380,8 +380,23 @@ function escapeHtml(str) {
     .replaceAll("'", "&#039;");
 }
 
+function makeBadges(badges) {
+  const row = document.createElement("div");
+  row.className = "badges";
+
+  (badges || []).forEach((b) => {
+    const span = document.createElement("span");
+    span.className = "badge";
+    span.textContent = String(b);
+    row.appendChild(span);
+  });
+
+  return row;
+}
+
 // If user loads a shared link with #n
 window.addEventListener("hashchange", () => {
   idx = clamp(getIndexFromHash(), 0, STORY.length - 1);
   render();
 });
+
