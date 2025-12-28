@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Survival 5 – Wrapped 2025</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app" aria-label="Survival 5 Wrapped Viewer">
+    <section class="story" id="story" aria-label="Story Viewer" tabindex="0">
+      <!-- Progress -->
+      <div class="progress" id="progress" aria-label="Fortschritt"></div>
+
+      <!-- Top controls -->
+      <div class="topbar" aria-label="Kontrollen">
+        <div class="topbar-left">
+          <div class="badge" id="slideLabel">1/12</div>
+        </div>
+
+        <div class="topbar-right">
+          <button class="icon-btn" id="muteBtn" type="button" aria-label="Musik stummschalten/aktivieren" title="Mute">
+            <span id="muteIcon" aria-hidden="true">🔊</span>
+          </button>
+          <button class="icon-btn" id="pauseBtn" type="button" aria-label="Pause/Weiter" title="Pause">
+            <span id="pauseIcon" aria-hidden="true">⏸</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Media stage -->
+      <div class="stage" id="stage" aria-label="Slide Inhalt">
+        <div class="loading" id="loading" aria-live="polite" hidden>
+          <div class="spinner" aria-hidden="true"></div>
+          <div class="loading-text">Lade Slides…</div>
+        </div>
+
+        <div class="placeholder" id="placeholder" hidden>
+          <div class="placeholder-title">Slide fehlt</div>
+          <div class="placeholder-sub">Datei nicht gefunden.</div>
+        </div>
+      </div>
+
+      <!-- Toast -->
+      <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+      <!-- Tap zones (Instagram-like): left=prev, center=pause, right=next -->
+      <div class="tap-zone left" id="tapLeft" aria-hidden="true"></div>
+      <div class="tap-zone center" id="tapCenter" aria-hidden="true"></div>
+      <div class="tap-zone right" id="tapRight" aria-hidden="true"></div>
+    </section>
+
+    <!-- Buttons BELOW the story (between story and footer) -->
+    <section class="belowbar" aria-label="Aktionen">
+      <div class="belowbar-inner">
+        <a class="download-btn" id="downloadBtn" href="#" download hidden>
+          Teilen
+        </a>
+
+        <button class="replay-btn" id="replayBtn" type="button" hidden>
+          Nochmal ansehen
+        </button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <a class="discord-link" href="https://discord.gg/22wq6CN5kB" target="_blank" rel="noopener noreferrer">
+        discord.gg/22wq6CN5kB
+      </a>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
